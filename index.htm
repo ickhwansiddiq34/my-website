@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page Kreatif - Tingkatkan Bisnis Anda</title>
+    <title>Biografi Devi Nur Muhammad Siddiq | Inovator & Pemimpin</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
@@ -11,9 +11,9 @@
         /* --- CSS Styling Modern --- */
         
         :root {
-            --primary-color: #ff4081; /* Pink Cerah (Warna Aksen) */
+            --primary-color: #008cba; /* Biru Laut (Warna Aksen: Profesional & Kepercayaan) */
             --secondary-color: #2c3e50; /* Biru Tua (Warna Teks/Header) */
-            --light-bg: #f5f7fa; /* Latar Belakang Sangat Cerah */
+            --light-bg: #f5f7fa; 
             --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
         }
 
@@ -32,7 +32,7 @@
             font-weight: 700;
         }
 
-        /* --- Navigasi (Minimalis) --- */
+        /* --- Navigasi --- */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -49,7 +49,7 @@
             text-decoration: none;
         }
 
-        /* --- Hero Section (Bagian Paling Menarik) --- */
+        /* --- Hero Section --- */
         .hero {
             background-color: white;
             display: flex;
@@ -67,11 +67,19 @@
         .hero-text h1 {
             font-size: 3.5em;
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
         }
         
+        .hero-text h2 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
         .hero-text p {
-            font-size: 1.2em;
+            font-size: 1.1em;
             margin-bottom: 30px;
             color: #7f8c8d;
         }
@@ -86,15 +94,15 @@
             border-radius: 50px;
             font-weight: 600;
             transition: transform 0.3s ease, background-color 0.3s ease;
-            box-shadow: 0 8px 15px rgba(255, 64, 129, 0.4);
+            box-shadow: 0 8px 15px rgba(0, 140, 186, 0.4);
         }
 
         .btn-primary:hover {
-            background-color: #e91e63;
+            background-color: #007bb5;
             transform: translateY(-3px);
         }
 
-        /* Area Gambar (Menarik) */
+        /* Area Gambar (Potret) */
         .hero-image {
             flex: 1;
             text-align: center;
@@ -102,15 +110,15 @@
         
         .hero-image img {
             width: 100%;
-            max-width: 550px;
-            height: auto;
-            border-radius: 15px;
+            max-width: 450px; /* Diperkecil untuk fokus potret */
+            height: 450px; /* Ditetapkan untuk bentuk proporsional */
+            border-radius: 50%; /* Membuat gambar potret lingkaran */
             box-shadow: var(--shadow);
-            object-fit: cover;
-            animation: fadeIn 1s ease-out;
+            object-fit: cover; /* Memastikan gambar mengisi area tanpa distorsi */
+            border: 5px solid var(--primary-color); /* Garis tepi untuk fokus */
         }
         
-        /* --- Bagian Fitur (Tiga Kolom) --- */
+        /* --- Bagian Pencapaian --- */
         .features {
             padding: 60px 5%;
             text-align: center;
@@ -149,7 +157,6 @@
             margin-top: 15px;
         }
         
-        /* Simbol untuk Fitur (Placeholder) */
         .icon {
             font-size: 2.5em;
             color: var(--primary-color);
@@ -181,9 +188,12 @@
             .hero-text h1 {
                 font-size: 2.5em;
             }
-
+            
             .hero-image img {
                 margin-top: 30px;
+                width: 70%;
+                height: auto;
+                border-radius: 15px; /* Kembali ke persegi untuk mobile */
             }
 
             .feature-grid {
@@ -201,49 +211,51 @@
 <body>
 
     <nav class="navbar">
-        <a href="#" class="logo">CREATIVA</a>
-        </nav>
+        <a href="#" class="logo">DEVI N.M. SIDDIQ</a>
+    </nav>
 
     <header class="hero">
         <div class="hero-text">
-            <h1>Desain Web yang **Membuat Perbedaan**</h1>
-            <p>Ubah pengunjung menjadi pelanggan dengan landing page yang dioptimalkan, cepat, dan sangat menarik. Kami menggabungkan seni dan data.</p>
-            <a href="#features" class="btn-primary">Mulai Sekarang</a>
+            <h1>Devi Nur Muhammad Siddiq</h1>
+            <h2>Inovator Teknologi & Penggerak Komunitas</h2>
+            <p>Seorang visioner dengan pengalaman lebih dari satu dekade di bidang pengembangan perangkat lunak dan kepemimpinan proyek strategis. Devi bersemangat menciptakan solusi yang berdampak sosial dan ekonomi secara luas.</p>
+            <p>Jelajahi kisah inspiratif di balik perjalanan karir dan kontribusinya bagi dunia teknologi dan edukasi.</p>
+            <a href="#pencapaian" class="btn-primary">Lihat Pencapaian</a>
         </div>
         <div class="hero-image">
             <img 
-                src="https://images.unsplash.com/photo-1596524430635-ce2c555ac115?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                alt="Gambar Desain Web Modern dan Kreatif"
+                src="https://images.unsplash.com/photo-1560250097-fb533411b0e2?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                alt="Foto Potret Devi Nur Muhammad Siddiq"
             >
         </div>
     </header>
 
-    <section id="features" class="features">
-        <h2>Keunggulan Kami yang Revolusioner</h2>
+    <section id="pencapaian" class="features">
+        <h2>Fokus Utama dan Kontribusi</h2>
         
         <div class="feature-grid">
             <div class="feature-card">
-                <span class="icon">✨</span>
-                <h3>Visual Menakjubkan</h3>
-                <p>Kami memastikan setiap elemen desain berbicara kepada audiens target Anda, menciptakan kesan pertama yang tak terlupakan.</p>
+                <span class="icon">💻</span>
+                <h3>Arsitektur Perangkat Lunak</h3>
+                <p>Mengkhususkan diri dalam merancang sistem skala besar yang aman, efisien, dan berkelanjutan menggunakan teknologi *cloud* modern.</p>
             </div>
             
             <div class="feature-card">
-                <span class="icon">⚡</span>
-                <h3>Kecepatan Maksimal</h3>
-                <p>Landing page dioptimalkan untuk kecepatan pemuatan di bawah 3 detik, menjamin SEO dan mengurangi rasio pentalan.</p>
+                <span class="icon">💡</span>
+                <h3>Inovasi EdTech</h3>
+                <p>Menciptakan platform edukasi digital yang telah menjangkau ribuan pelajar, mempersempit kesenjangan akses pendidikan teknologi.</p>
             </div>
             
             <div class="feature-card">
-                <span class="icon">📈</span>
-                <h3>Konversi Tinggi</h3>
-                <p>Kami merancang setiap tombol dan teks dengan tujuan tunggal: meningkatkan tingkat konversi Anda secara signifikan.</p>
+                <span class="icon">🤝</span>
+                <h3>Kepemimpinan Tim</h3>
+                <p>Berpengalaman memimpin tim multidisiplin menuju penyelesaian target yang ambisius dengan pendekatan kolaboratif dan suportif.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>Landing Page Kreatif &copy; 2025. Dibuat dengan ❤ dan Kode Bersih.</p>
+        <p>Biografi Digital Devi Nur Muhammad Siddiq &copy; 2025. Terhubung untuk Kolaborasi.</p>
     </footer>
 
 </body>
