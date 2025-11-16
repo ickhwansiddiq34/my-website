@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Kreatif - Tingkatkan Bisnis Anda</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS Styling Modern --- */
+        
+        :root {
+            --primary-color: #ff4081; /* Pink Cerah (Warna Aksen) */
+            --secondary-color: #2c3e50; /* Biru Tua (Warna Teks/Header) */
+            --light-bg: #f5f7fa; /* Latar Belakang Sangat Cerah */
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Reset dan Typography Dasar */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        /* --- Navigasi (Minimalis) --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* --- Hero Section (Bagian Paling Menarik) --- */
+        .hero {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            padding: 80px 5%;
+            gap: 40px;
+            min-height: 70vh;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5em;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        
+        .hero-text p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #7f8c8d;
+        }
+        
+        /* Tombol Aksi Utama */
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 8px 15px rgba(255, 64, 129, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: #e91e63;
+            transform: translateY(-3px);
+        }
+
+        /* Area Gambar (Menarik) */
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            max-width: 550px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            object-fit: cover;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        /* --- Bagian Fitur (Tiga Kolom) --- */
+        .features {
+            padding: 60px 5%;
+            text-align: center;
+        }
+        
+        .features h2 {
+            margin-bottom: 50px;
+            font-size: 2em;
+        }
+
+        .feature-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            width: 300px;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .feature-card h3 {
+            color: var(--primary-color);
+            font-size: 1.4em;
+            margin-top: 15px;
+        }
+        
+        /* Simbol untuk Fitur (Placeholder) */
+        .icon {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: #bdc3c7;
+            font-size: 0.9em;
+        }
+
+        /* Responsif untuk Mobile */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 5%;
+            }
+            
+            .hero-text {
+                max-width: 100%;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5em;
+            }
+
+            .hero-image img {
+                margin-top: 30px;
+            }
+
+            .feature-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .feature-card {
+                width: 80%;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">CREATIVA</a>
+        </nav>
+
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Desain Web yang **Membuat Perbedaan**</h1>
+            <p>Ubah pengunjung menjadi pelanggan dengan landing page yang dioptimalkan, cepat, dan sangat menarik. Kami menggabungkan seni dan data.</p>
+            <a href="#features" class="btn-primary">Mulai Sekarang</a>
+        </div>
+        <div class="hero-image">
+            <img 
+                src="https://images.unsplash.com/photo-1596524430635-ce2c555ac115?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                alt="Gambar Desain Web Modern dan Kreatif"
+            >
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <h2>Keunggulan Kami yang Revolusioner</h2>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="icon">✨</span>
+                <h3>Visual Menakjubkan</h3>
+                <p>Kami memastikan setiap elemen desain berbicara kepada audiens target Anda, menciptakan kesan pertama yang tak terlupakan.</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="icon">⚡</span>
+                <h3>Kecepatan Maksimal</h3>
+                <p>Landing page dioptimalkan untuk kecepatan pemuatan di bawah 3 detik, menjamin SEO dan mengurangi rasio pentalan.</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="icon">📈</span>
+                <h3>Konversi Tinggi</h3>
+                <p>Kami merancang setiap tombol dan teks dengan tujuan tunggal: meningkatkan tingkat konversi Anda secara signifikan.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Landing Page Kreatif &copy; 2025. Dibuat dengan ❤ dan Kode Bersih.</p>
+    </footer>
+
+</body>
+</html>
