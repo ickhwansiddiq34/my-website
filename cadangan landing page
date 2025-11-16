@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografi Devi Nur Muhammad Siddiq | Inovator & Pemimpin</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS Styling Modern --- */
+        
+        :root {
+            --primary-color: #008cba; /* Biru Laut (Warna Aksen: Profesional & Kepercayaan) */
+            --secondary-color: #2c3e50; /* Biru Tua (Warna Teks/Header) */
+            --light-bg: #f5f7fa; 
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Reset dan Typography Dasar */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        /* --- Navigasi --- */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            padding: 80px 5%;
+            gap: 40px;
+            min-height: 70vh;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5em;
+            line-height: 1.1;
+            margin-bottom: 5px;
+        }
+        
+        .hero-text h2 {
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .hero-text p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            color: #7f8c8d;
+        }
+        
+        /* Tombol Aksi Utama */
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 8px 15px rgba(0, 140, 186, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: #007bb5;
+            transform: translateY(-3px);
+        }
+
+        /* Area Gambar (Potret) */
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            max-width: 450px; /* Diperkecil untuk fokus potret */
+            height: 450px; /* Ditetapkan untuk bentuk proporsional */
+            border-radius: 50%; /* Membuat gambar potret lingkaran */
+            box-shadow: var(--shadow);
+            object-fit: cover; /* Memastikan gambar mengisi area tanpa distorsi */
+            border: 5px solid var(--primary-color); /* Garis tepi untuk fokus */
+        }
+        
+        /* --- Bagian Pencapaian --- */
+        .features {
+            padding: 60px 5%;
+            text-align: center;
+        }
+        
+        .features h2 {
+            margin-bottom: 50px;
+            font-size: 2em;
+        }
+
+        .feature-grid {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            width: 300px;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .feature-card h3 {
+            color: var(--primary-color);
+            font-size: 1.4em;
+            margin-top: 15px;
+        }
+        
+        .icon {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--secondary-color);
+            color: #bdc3c7;
+            font-size: 0.9em;
+        }
+
+        /* Responsif untuk Mobile */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 50px 5%;
+            }
+            
+            .hero-text {
+                max-width: 100%;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero-image img {
+                margin-top: 30px;
+                width: 70%;
+                height: auto;
+                border-radius: 15px; /* Kembali ke persegi untuk mobile */
+            }
+
+            .feature-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .feature-card {
+                width: 80%;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="logo">DEVI N.M. SIDDIQ</a>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Devi Nur Muhammad Siddiq</h1>
+            <h2>Inovator Teknologi & Penggerak Komunitas</h2>
+            <p>Seorang visioner dengan pengalaman lebih dari satu dekade di bidang pengembangan perangkat lunak dan kepemimpinan proyek strategis. Devi bersemangat menciptakan solusi yang berdampak sosial dan ekonomi secara luas.</p>
+            <p>Jelajahi kisah inspiratif di balik perjalanan karir dan kontribusinya bagi dunia teknologi dan edukasi.</p>
+            <a href="#pencapaian" class="btn-primary">Lihat Pencapaian</a>
+        </div>
+        <div class="hero-image">
+            <img 
+                src="https://images.unsplash.com/photo-1560250097-fb533411b0e2?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                alt="Foto Potret Devi Nur Muhammad Siddiq"
+            >
+        </div>
+    </header>
+
+    <section id="pencapaian" class="features">
+        <h2>Fokus Utama dan Kontribusi</h2>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="icon">💻</span>
+                <h3>Arsitektur Perangkat Lunak</h3>
+                <p>Mengkhususkan diri dalam merancang sistem skala besar yang aman, efisien, dan berkelanjutan menggunakan teknologi *cloud* modern.</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="icon">💡</span>
+                <h3>Inovasi EdTech</h3>
+                <p>Menciptakan platform edukasi digital yang telah menjangkau ribuan pelajar, mempersempit kesenjangan akses pendidikan teknologi.</p>
+            </div>
+            
+            <div class="feature-card">
+                <span class="icon">🤝</span>
+                <h3>Kepemimpinan Tim</h3>
+                <p>Berpengalaman memimpin tim multidisiplin menuju penyelesaian target yang ambisius dengan pendekatan kolaboratif dan suportif.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Biografi Digital Devi Nur Muhammad Siddiq &copy; 2025. Terhubung untuk Kolaborasi.</p>
+    </footer>
+
+</body>
+</html>
