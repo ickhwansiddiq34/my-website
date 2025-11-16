@@ -1,55 +1,203 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Game Tarik Tambang</title>
+
   <style>
-    body { font-family: Arial; text-align: center; }
-    .team { display: inline-block; width: 40%; padding: 20px; border: 1px solid #ccc; margin: 10px; }
-    h2 { margin-top: 0; }
-    button { padding: 10px 20px; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(#f0f4ff, #d8e3ff);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 4vw;
+      font-weight: bold;
+      color: #1a2a6c;
+    }
+
+    .game-container {
+      width: 90%;
+      margin: auto;
+      margin-top: 40px;
+    }
+
+    /* AREA TALI */
+    .bar-container {
+      width: 100%;
+      height: 40px;
+      background: #ccc;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bar {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, red, white, blue);
+      position: absolute;
+      left: 0;
+      transition: left 0.15s ease-out;
+    }
+
+    /* UI BUTTON */
+    .teams {
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    button {
+      width: 40%;
+      padding: 40px;
+      font-size: 3vw;
+      font-weight: bold;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      color: white;
+      transition: 0.2s;
+    }
+
+    #btnA { background: #e63946; }
+    #btnB { background: #457b9d; }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    /* INFO */
+    #info {
+      margin-top: 20px;
+      font-size: 2.5vw;
+      color: #1d3557;
+      font-weight: bold;
+    }
+
+    /* WIN OVERLAY */
+    #winnerScreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 6vw;
+      font-weight: bold;
+      z-index: 999;
+      flex-direction: column;
+    }
+
+    #restartBtn {
+      margin-top: 30px;
+      padding: 20px 40px;
+      font-size: 3vw;
+      background: #06d6a0;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    /* RESPONSIVE for large IFP displays */
+    @media (min-width: 1600px) {
+      h1 { font-size: 3vw; }
+      button { font-size: 2.5vw; padding: 50px; }
+      #info { font-size: 2vw; }
+      #winnerScreen { font-size: 5vw; }
+      #restartBtn { font-size: 2vw; }
+    }
   </style>
 </head>
+
 <body>
 
-<h1>Game Tarik Tambang</h1>
+  <h1>Game Tarik Tambang</h1>
 
-<div class="team" id="teamA">
-  <h2>Tim A</h2>
-  <p>Kekuatan: <span id="powerA">0</span></p>
-  <p>Poin: <span id="pointA">0</span></p>
-  <button onclick="addPoint('A')">+1 Poin</button>
-</div>
+  <div class="game-container">
 
-<div class="team" id="teamB">
-  <h2>Tim B</h2>
-  <p>Kekuatan: <span id="powerB">0</span></p>
-  <p>Poin: <span id="pointB">0</span></p>
-  <button onclick="addPoint('B')">+1 Poin</button>
-</div>
+    <div class="bar-container">
+      <div id="bar" class="bar"></div>
+    </div>
+
+    <div id="info">Klik cepat tombol tim masing-masing!</div>
+
+    <div class="teams">
+      <button id="btnA" onclick="clickA()">TARIK TIM A</button>
+      <button id="btnB" onclick="clickB()">TARIK TIM B</button>
+    </div>
+
+  </div>
+
+  <!-- WINNER SCREEN -->
+  <div id="winnerScreen">
+    <div id="winnerText"></div>
+    <button id="restartBtn" onclick="restart()">Main Lagi</button>
+  </div>
 
 <script>
-const API_URL = "PASTE_URL_APPS_SCRIPT_KAMU"; // <- tempel URL deploy
+  let score = 0;
+  const limit = 100;        // batas kemenangan
+  const bar = document.getElementById("bar");
+  const winnerScreen = document.getElementById("winnerScreen");
+  const winnerText = document.getElementById("winnerText");
 
-async function loadData() {
-  const res = await fetch(API_URL);
-  const data = await res.json();
+  function updateBar() {
+    // Score -100 (Tim B menang) sampai 100 (Tim A menang)
+    const maxShift = 40; // % pergeseran maksimal
+    const shift = (score / limit) * maxShift;
+    bar.style.left = shift + "%";
 
-  document.getElementById("powerA").innerText = data.teamA.power;
-  document.getElementById("pointA").innerText = data.teamA.point;
-  document.getElementById("powerB").innerText = data.teamB.power;
-  document.getElementById("pointB").innerText = data.teamB.point;
-}
+    if (score >= limit) endGame("Tim A");
+    if (score <= -limit) endGame("Tim B");
+  }
 
-async function addPoint(team) {
-  await fetch(API_URL, {
-    method: "POST",
-    contentType: "application/json",
-    body: JSON.stringify({ team: team, value: 1 })
-  });
-  loadData();
-}
+  function clickA() {
+    score += 3;   // klik Tim A mendorong ke kanan
+    updateBar();
+  }
 
-loadData();
+  function clickB() {
+    score -= 3;   // klik Tim B mendorong ke kiri
+    updateBar();
+  }
+
+  function endGame(team) {
+    winnerText.textContent = team + " MENANG!";
+    winnerScreen.style.display = "flex";
+
+    // animasi getar
+    document.body.style.animation = "shake 0.5s infinite";
+  }
+
+  function restart() {
+    score = 0;
+    updateBar();
+    winnerScreen.style.display = "none";
+    document.body.style.animation = "none";
+  }
+
+  // Animasi shake CSS (ditambahkan lewat JS agar simple)
+  const style = document.createElement("style");
+  style.textContent = `
+    @keyframes shake {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(10px, 0); }
+      50% { transform: translate(-10px, 0); }
+      75% { transform: translate(8px, 0); }
+      100% { transform: translate(0, 0); }
+    }
+  `;
+  document.head.appendChild(style);
 </script>
 
 </body>
